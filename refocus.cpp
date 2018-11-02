@@ -1,3 +1,4 @@
+#define WITHOUT_CUDA
 #include "openfv/refocusing.h"
 #include "openfv/parse_settings.h"
 
@@ -27,11 +28,13 @@ int main(int argc, char** argv) {
 
     if (FLAGS_live) {
         if (settings.use_gpu) {
-            refocus.GPUliveView();
+            // refocus.GPUliveView();
+            refocus.CPUliveView();
+
         } else {
             refocus.CPUliveView();
         }
-    } 
+    }
 
     if (FLAGS_dump_stack) {
         refocus.dump_stack(FLAGS_save_path, FLAGS_zmin, FLAGS_zmax, FLAGS_dz, FLAGS_thresh, "tif");
