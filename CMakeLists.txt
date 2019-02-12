@@ -9,8 +9,8 @@ find_package(OpenCV REQUIRED)
 
 set(CUDA_INC_DIR "/usr/local/cuda/include" CACHE PATH "Path to CUDA Directory")
 set(EIGEN_INC_DIR "/usr/include/eigen3" CACHE PATH "Path to Eigen Directory")
-set(OFV_INC_DIR "/usr/local/include" CACHE PATH "Path to OpenFV Include Directory")
-set(OFV_LIB_DIR "/usr/local/lib" CACHE PATH "Path to OpenFV Lib Directory")
+set(OFV_INC_DIR "${CMAKE_PREFIX_PATH}/include" CACHE PATH "Path to OpenFV Include Directory")
+set(OFV_LIB_DIR "${CMAKE_PREFIX_PATH}/lib" CACHE PATH "Path to OpenFV Lib Directory")
 
 # Python
 set(Python_ADDITIONAL_VERSIONS "2.7")
